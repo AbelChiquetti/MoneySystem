@@ -1,5 +1,5 @@
 {
-	"title": "MAPOS - Sistema de Controle de Ordens de Serviço",
+	"title": "MoneySystem",
 	"extensions": [
 		"cURL",
 		"MySQLi",
