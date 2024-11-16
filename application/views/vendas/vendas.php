@@ -14,14 +14,20 @@
     <div class="span12" style="margin-left: 0">
         <form method="get" action="<?php echo base_url(); ?>index.php/vendas/gerenciar">
             <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'aVenda')) { ?>
-                <div class="span3">
-                    <a href="<?php echo base_url(); ?>index.php/vendas/adicionar" class="button btn btn-mini btn-success" style="max-width: 160px">
+                <div class="span2">
+                    <a href="<?php echo base_url(); ?>index.php/vendas/adicionar" class="button btn btn-mini btn-success" style="max-width: 120px">
                         <span class="button__icon"><i class='bx bx-plus-circle'></i></span>
                         <span class="button__text2">Nova Venda</span>
                     </a>
                 </div>
+                <div class="span2">
+                    <a href="<?php echo base_url(); ?>index.php/notafiscal/adicionar" class="button btn btn-mini btn-danger" style="max-width: 100px">
+                        <span class="button__icon"><i class='bx bx-plus-circle'></i></span>
+                        <span class="button__text2">Gerar NF</span>
+                    </a>
+                </div>
             <?php } ?>
-            <div class="span3">
+            <div class="span2">
                 <input type="text" name="pesquisa" id="pesquisa" placeholder="Nome do cliente a pesquisar" class="span12" value="">
             </div>
             <div class="span2">
