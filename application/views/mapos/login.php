@@ -34,7 +34,7 @@
         // Irá retornar conforme o horário:
         ?>
       </h1>
-      <h2 class="h-two"> Ao MoneySystem</h2>
+      <h2 class="h-two">ao MoneySystem</h2>
       <img src="<?php echo base_url() ?>assets/img/dashboard-animate.svg" class="left-login-image" alt="MoneySystem - Versão: <?= $this->config->item('app_version'); ?>">
     </div>
     <form class="form-vertical" id="formLogin" method="post" action="<?= site_url('login/verificarLogin') ?>">
@@ -53,14 +53,10 @@
             <div class="card">
               <div class="content">
                 <div id="newlog">
-                  <div class="icon2">
-                    <img src="<?php echo base_url() ?>assets/img/logo-two.png">
-                  </div>
-                  <div class="title01">
-                    <?= '<img src="' . base_url() . 'assets/img/logo-mapos-branco.png">'; ?>
+                  <div class="iconlogogrande">
+                    <img src="<?php echo base_url() ?>assets/img/logogrande.png">
                   </div>
                 </div>
-                <div id="mcell">Versão: <?= $this->config->item('app_version'); ?></div>
                 <div class="input-field">
                   <label class="fas fa-user" for="nome"></label>
                   <input id="email" name="email" type="text" placeholder="Email">
@@ -72,8 +68,8 @@
                 <div class="center">
                   <button id="btn-acessar">Acessar</button>
                 </div>
-                <div class="links-uteis"><a href="https://github.com/RamonSilva20/mapos">
-                    <p><?= date('Y'); ?> &copy; Ramon Silva</p>
+                <div class="links-uteis"><a href="https://www.instagram.com/moneysystem.br">
+                    <p><?= date('Y'); ?> &copy; MoneySystem</p>
                   </a>
                 </div>
                 <a href="#notification" id="call-modal" role="button" class="btn" data-toggle="modal" style="display: none ">notification</a>
