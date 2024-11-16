@@ -17,6 +17,25 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 
 
 -- -----------------------------------------------------
+-- Table `notas_fiscais`
+-- -----------------------------------------------------
+CREATE TABLE notas_fiscais (
+    idNota INT AUTO_INCREMENT PRIMARY KEY,
+    tipo VARCHAR(20), -- Ex.: "Serviço" ou "Produto"
+    descricao TEXT,
+    valor DECIMAL(10, 2),
+    desconto DECIMAL(10, 2),
+    valor_final DECIMAL(10, 2),
+    cliente_id INT,
+    os_id INT,
+    data_emissao DATE,
+    status VARCHAR(20), -- Ex.: "Emitida", "Cancelada"
+    FOREIGN KEY (cliente_id) REFERENCES clientes (idClientes),
+    FOREIGN KEY (os_id) REFERENCES os (idOs)
+);
+
+
+-- -----------------------------------------------------
 -- Table `clientes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `clientes` (
@@ -272,6 +291,25 @@ CREATE TABLE IF NOT EXISTS `produtos` (
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
+INSERT INTO `produtos` (`idProdutos`, `codDeBarra`, `descricao`, `unidade`, `precoCompra`, `precoVenda`, `estoque`, `estoqueMinimo`, `saida`, `entrada`) VALUES
+(1, '0101050170', 'R5WF - VISION CLEAR 70', 'M', 136.50, 410.00, 600, 0, 1, 1),
+(2, '0101052105', 'R5WF - DIAMOND HD 05', 'M', 182.00, 850.00, 15, 7, 1, 1),
+(3, '0101050505', 'R5WF - NRI 05 II', 'M', 72.00, 385.00, 30, 15, 1, 1),
+(4, '0101050520', 'R5WF - NRI 20 II', 'M', 72.00, 385.00, 30, 15, 1, 1),
+(5, '0101050535', 'R5WF - NRI 35 II', 'M', 72.00, 385.00, 30, 15, 1, 1),
+(6, '0101050550', 'R5WF - NRI 50 II', 'M', 72.00, 385.00, 30, 15, 1, 1),
+(7, '0101050205', 'R5WF - VISION BLACK 05', 'M', 119.20, 495.00, 15, 7, 1, 1),
+(8, '0101050235', 'R5WF - VISION BLACK 35', 'M', 119.20, 495.00, 15, 7, 1, 1),
+(9, '0101050250', 'R5WF - VISION BLACK 50', 'M', 119.20, 495.00, 15, 7, 1, 1),
+(10, '0101052120', 'R5WF - DIAMOND HD 20', 'M', 208.00, 850.00, 15, 7, 1, 1),
+(11, '0101052135', 'R5WF - DIAMOND HD 35', 'M', 208.00, 850.00, 15, 7, 1, 1),
+(12, '0101052150', 'R5WF - DIAMOND HD 50', 'M', 208.00, 850.00, 15, 7, 1, 1),
+(13, '0101050180', 'R5WF - VISION CLEAR 80', 'M', 156.00, 410.00, 15, 7, 1, 1),
+(14, '0101050220', 'R5WF - VISION BLACK 20', 'M', 119.20, 495.00, 15, 7, 1, 1),
+(15, '0102052235', 'R5WF - NR 35', 'M', 36.00, 45.00, 30, 15, 1, 1),
+(16, '0102052205', 'R5WF - NR 05', 'M', 36.00, 45.00, 30, 15, 1, 1),
+(17, '0102052220', 'R5WF - NR 20', 'M', 36.00, 45.00, 30, 15, 1, 1);
 
 
 -- -----------------------------------------------------
@@ -636,7 +674,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
 );
 
 INSERT IGNORE INTO `configuracoes` (`idConfig`, `config`, `valor`) VALUES
-(2, 'app_name', 'Map-OS'),
+(2, 'app_name', 'MoneySystem'),
 (3, 'app_theme', 'white'),
 (4, 'per_page', '10'),
 (5, 'os_notification', 'cliente'),
