@@ -49,6 +49,10 @@ body * {
   width: 42px;
 }
 
+.iconlogogrande {
+ width: 150px;
+}
+
 #newlog .title01 {
   padding-left: 6px;
   width       : 135px;

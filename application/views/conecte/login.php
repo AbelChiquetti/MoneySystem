@@ -55,11 +55,8 @@ $parse_cpfcnpj = $this->input->get('c');
                             <div class="card card-cad">
                                 <div class="content">
                                     <div id="newlog">
-                                        <div class="icon2">
-                                            <img src="<?php echo base_url() ?>assets/img/logo-two.png">
-                                        </div>
-                                        <div class="title01">
-                                            <img src="<?php echo base_url() ?>assets/img/logo-mapos-branco.png">
+                                        <div class="iconlogogrande">
+                                            <img src="<?php echo base_url() ?>assets/img/logogrande.png">
                                         </div>
                                     </div>
                                     <div id="mcell">Versão: <?= $this->config->item('app_version'); ?></div>
