@@ -18,6 +18,7 @@ body * {
 }
 
 :root {
+  --moneysystem: #5AB334;
   --funSider: #25233c;
   --funCont : #e5eefd;
   --blue    : #36449e;
@@ -40,7 +41,7 @@ body * {
   display        : flex;
   align-items    : center;
   justify-content: center;
-  margin-bottom  : 7px;
+  margin-bottom  : 30px;
   grid-column-gap: 5px;
 }
 
@@ -66,7 +67,7 @@ body * {
 }
 
 .container .card {
-  background   : var(--violeta0);
+  background   : var(--moneysystem);
   overflow     : hidden;
   border-radius: 15px;
   box-shadow   : 0 15px 26px rgb(0 0 0 / 37%);
@@ -132,7 +133,7 @@ input[type="password"] {
 }
 
 label {
-  color        : #fa9c8e;
+  color        : #5AB334;
   position     : absolute;
   margin-bottom: -3px;
   transition   : 0.3s ease-out;
@@ -159,7 +160,7 @@ input:focus {
 }
 
 .container .card .content button {
-  background    : linear-gradient(13deg, #ff725e, #ffa85e);
+  background    : linear-gradient(13deg, #afe3af, #56db56);
   padding       : 7px 15px;
   border-radius : 5px;
   font-family   : "Roboto", sans-serif !important;
@@ -175,8 +176,8 @@ input:focus {
 }
 
 .container .card .content button:hover {
-  background : linear-gradient(13deg, #ffa85e, #ff725e);
-  box-shadow : 0 7px 30px -12px rgba(255, 132, 0, 0.75);
+  background : linear-gradient(14deg, #9dd39d, #52c252);
+  box-shadow : 0 7px 30px -12px rgba(219, 255, 198, 0.75);
   color      : var(--white);
   font-weight: 500;
 }
