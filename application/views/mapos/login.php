@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <title><?= $this->config->item('app_name') ?> </title>
   <meta charset="UTF-8" />
@@ -15,7 +14,6 @@
 <body>
   <div class="main-login">
     <div class="left-login">
-      <!-- Saudação -->
       <h1 class="h-one">
         <?php
         function saudacao($nome = '')
@@ -31,7 +29,6 @@
         }
         $login = 'bem-vindo';
         echo saudacao($login);
-        // Irá retornar conforme o horário:
         ?>
       </h1>
       <h2 class="h-two">ao MoneySystem</h2>
@@ -39,6 +36,8 @@
     </div>
     <form class="form-vertical" id="formLogin" method="post" action="<?= site_url('login/verificarLogin') ?>">
       <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>">
+
+      <!-- Caso haja um erro de login -->
       <?php if ($this->session->flashdata('error') != null) { ?>
         <div id="loginbox">
           <div class="alert alert-danger">
@@ -61,14 +60,16 @@
                   <label class="fas fa-user" for="nome"></label>
                   <input id="email" name="email" type="text" placeholder="Email">
                 </div>
-                <div class="input-field">
+                <div class="input-field position-relative">
                   <label class="fas fa-lock" for="senha"></label>
-                  <input name="senha" type="password" placeholder="Senha">
+                  <input id="senha" name="senha" type="password" placeholder="Senha">
+                  <i id="togglePassword" class="fas fa-eye position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
                 </div>
                 <div class="center">
                   <button id="btn-acessar">Acessar</button>
                 </div>
-                <div class="links-uteis"><a href="https://www.instagram.com/moneysystem.br">
+                <div class="links-uteis">
+                  <a href="https://www.instagram.com/moneysystem.br">
                     <p><?= date('Y'); ?> &copy; MoneySystem</p>
                   </a>
                 </div>
@@ -110,6 +111,17 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $('#email').focus();
+
+      // Mostrar/ocultar senha
+      $('#togglePassword').click(function() {
+        var senhaInput = $('#senha');
+        var type = senhaInput.attr('type') === 'password' ? 'text' : 'password';
+        senhaInput.attr('type', type);
+
+        // Alternar o ícone
+        $(this).toggleClass('fa-eye fa-eye-slash');
+      });
+
       $("#formLogin").validate({
         rules: {
           email: {
@@ -123,7 +135,7 @@
         messages: {
           email: {
             required: '',
-            email: 'Insira Email válido'
+            email: 'Insira um email válido'
           },
           senha: {
             required: 'Campos Requeridos.'
@@ -147,11 +159,8 @@
                     $('#progress-acessar').addClass('hide');
                     $('#message').text(data.message || 'Os dados de acesso estão incorretos, por favor tente novamente!');
                     $('#call-modal').trigger('click');
-
-                    // Atualiza o token a cada requisição
                     var newCsrfToken = data.MAPOS_TOKEN; 
                     $("input[name='<?= $this->security->get_csrf_token_name(); ?>']").val(newCsrfToken);
-                    
                 }
             }
           });
@@ -172,5 +181,4 @@
     });
   </script>
 </body>
-
 </html>
