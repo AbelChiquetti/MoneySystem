@@ -115,9 +115,56 @@
                             </div>
                         </div>
 
-                        <!-- Configrações do EFI -->
+                        <!-- Configurações do IntegraNotas -->
                         <hr>
-                        <h5 style="margin-left:10px;">Configrações do EFI (antiga GerenciaNet)</h5>
+                        <h5 style="margin-left:10px;">Configurações de Notas Fiscais</h5>
+                        <div class="control-group">
+                            <label for="EFI_PRODUCTION" class="control-label">Ambiente</label>
+                            <div class="controls">
+                                <select name="PAYMENT_GATEWAYS_EFI_PRODUCTION" id="EFI_PRODUCTION">
+                                    <option value="false" <?= !filter_var($_ENV['PAYMENT_GATEWAYS_EFI_PRODUCTION'] ?? false, FILTER_VALIDATE_BOOLEAN) ? 'selected' : ''; ?>>Testes</option>
+                                    <option value="true" <?= filter_var($_ENV['PAYMENT_GATEWAYS_EFI_PRODUCTION'] ?? false, FILTER_VALIDATE_BOOLEAN) ? 'selected' : ''; ?>>Produção</option>
+                                </select>
+                                <span class="help-inline">Selecione se deseja apenas testar</span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+    <div class="controls">
+        <button type="button" class="btn btn-secondary" id="preencherCadastroBtn">Preencher Automaticamente</button>
+    </div>
+</div>
+                        <div class="control-group">
+                            <label for="EFI_CREDENTIAIS_CLIENT_ID" class="control-label">CNPJ</label>
+                            <div class="controls">
+                                <input type="text" name="PAYMENT_GATEWAYS_EFI_CREDENTIAIS_CLIENT_ID" value="<?= $_ENV['PAYMENT_GATEWAYS_EFI_CREDENTIAIS_CLIENT_ID'] ?>" id="EFI_CREDENTIAIS_CLIENT_ID">
+                                <span class="help-inline">Do emitente</span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label for="EFI_CREDENTIAIS_CLIENT_SECRET" class="control-label">Inscrição Estadual</label>
+                            <div class="controls">
+                                <input type="text" name="PAYMENT_GATEWAYS_EFI_CREDENTIAIS_CLIENT_SECRET" value="<?= $_ENV['PAYMENT_GATEWAYS_EFI_CREDENTIAIS_CLIENT_SECRET'] ?>" id="EFI_CREDENTIAIS_CLIENT_SECRET">
+                                <span class="help-inline">Pode ser encontrado no <a href="http://www.sintegra.gov.br/" target="_blank" rel="noopener noreferrer">Sintegra</a></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label for="EFI_CREDENTIAIS_CLIENT_SECRET" class="control-label">Nome Fantasia</label>
+                            <div class="controls">
+                                <input type="text" name="PAYMENT_GATEWAYS_EFI_CREDENTIAIS_CLIENT_SECRET" value="<?= $_ENV['PAYMENT_GATEWAYS_EFI_CREDENTIAIS_CLIENT_SECRET'] ?>" id="EFI_CREDENTIAIS_CLIENT_SECRET">
+                                <span class="help-inline">Como consta no CNPJ</span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+    <label for="EFI_CERTIFICADO_DIGITAL" class="control-label">Certificado Digital</label>
+    <div class="controls">
+        <input type="file" name="certificado_digital" id="EFI_CERTIFICADO_DIGITAL" accept=".pfx,.p12">
+        <span class="help-inline">Selecione o arquivo em .pfx ou .p12</span>
+    </div>
+</div>
+
+                        <!-- Configurações do EFI -->
+                        <hr>
+                        <h5 style="margin-left:10px;">Configurações do EFI (antiga GerenciaNet)</h5>
                         <div class="control-group">
                             <label for="EFI_PRODUCTION" class="control-label">Ambiente</label>
                             <div class="controls">
@@ -156,9 +203,9 @@
                             </div>
                         </div>
 
-                        <!-- Configrações do Mercado Pago -->
+                        <!-- Configurações do Mercado Pago -->
                         <hr>
-                        <h5 style="margin-left:10px;">Configrações do Mercado Pago</h5>
+                        <h5 style="margin-left:10px;">Configurações do Mercado Pago</h5>
                         <div class="control-group">
                             <label for="MERCADO_PAGO_CREDENTIALS_PUBLIC_KEY" class="control-label">PUBLIC_KEY</label>
                             <div class="controls">
@@ -201,9 +248,9 @@
                             </div>
                         </div>
 
-                        <!-- Configrações do ASAAS -->
+                        <!-- Configurações do ASAAS -->
                         <hr>
-                        <h5 style="margin-left:10px;">Configrações do ASAAS</h5>
+                        <h5 style="margin-left:10px;">Configurações do ASAAS</h5>
                         <div class="control-group">
                             <label for="ASAAS_PRODUCTION" class="control-label">Ambiente</label>
                             <div class="controls">
