@@ -109,7 +109,7 @@
         <li class="card">
             <div class="grid-blak">
                 <a href="<?= site_url('financeiro/lancamentos') ?>">
-                    <div class="numbers N-tittle">Lançamentos</div>
+                    <div class="numbers N-tittle">Financeiro</div>
                     <div class="cardName">F7</div>
                 </a>
             </div>

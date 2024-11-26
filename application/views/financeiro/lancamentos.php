@@ -30,7 +30,7 @@ $periodo = $this->input->get('periodo');
                 <span class="icon">
                     <i class="fas fa-hand-holding-usd"></i>
                 </span>
-                <h5>Lançamentos Financeiros</h5>
+                <h5>Financeiro</h5>
     </div>
     <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'aLancamento')) { ?>
         <div class="" style="display:flex">

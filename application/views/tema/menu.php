@@ -122,8 +122,8 @@
                         echo 'active';
                     }; ?>">
                         <a class="tip-bottom" title="" href="<?= site_url('financeiro/lancamentos') ?>"><i class="bx bx-bar-chart-alt-2 iconX"></i>
-                            <span class="title">Lançamentos</span>
-                            <span class="title-tooltip">Lançamentos</span>
+                            <span class="title">Financeiro</span>
+                            <span class="title-tooltip">Financeiro</span>
                         </a>
                     </li>
                 <?php } ?>
